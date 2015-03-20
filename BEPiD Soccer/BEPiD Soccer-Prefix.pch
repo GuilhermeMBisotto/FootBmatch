@@ -1,0 +1,16 @@
+//
+//  BEPiD Soccer-Prefix.h
+//  BEPiD Soccer
+//
+//  Created by Bruno Rovea Soares on 11/03/15.
+//  Copyright (c) 2015 Bruno Rovea Soares. All rights reserved.
+//
+#import <Availability.h>
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <Parse/Parse.h>
+    #import <FacebookSDK/FacebookSDK.h>
+    #import "ParseFacebookUtils.framework/Headers/PFFacebookUtils.h"
+#endif
