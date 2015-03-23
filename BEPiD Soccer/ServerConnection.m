@@ -29,7 +29,6 @@
 {
     @try {
         
-        
         //garante que não ocorram 2 requisições iguais antes de receber uma resposta
         if ([self getReqLogin]) return;
         [self setReqLogin:YES];
@@ -59,7 +58,8 @@
                 }
             } else
             {
-                
+                json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+                [handler onFailure:json];
             }
         }];
         

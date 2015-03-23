@@ -21,9 +21,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    SessionManager *se = [SessionManager sharedManager];
-    
     [Parse setApplicationId:@"To3BJyf3vGlicOKUGT7weOODEcMpNU9wpbXohNQC"
                   clientKey:@"Tps1kmOevHRuMHPz7FwzMYWsoiv1yq3xTbTwkt6G"];
     
@@ -50,7 +47,6 @@
     BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
     
     // You can add your app-specific url handling code here if needed
-    
     return wasHandled;
 }
 
