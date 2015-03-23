@@ -1,10 +1,3 @@
-//
-//  Constants.h
-//  Aproximar
-//
-//  Created by Enrique C. Melgarejo on 14/09/14.
-//  Copyright (c) 2014 GreenB. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -17,34 +10,14 @@
 #pragma mark - general
 
 static BOOL debugMode = TRUE;
-static NSString *projectName = @"Aproximar";
+static NSString *projectName = @"FootB Match";
 
-//static NSString *serverUrl = @"http://aproximar.greenb.com.br";
-static NSString *serverUrl = @"http://beta.aproximar.greenb.com.br";
-//static NSString *serverUrl = @"http://172.16.2.0:8081"; //testes locais
-//static NSString *serverUrl = @"http://192.168.0.109:8081"; //testes locais
 static NSInteger timeoutInterval = 15;
 
 #pragma mark - placeholders
 
 static NSString *PASSWORD_MASK = @"********";
 static NSString *IMAGE_DEFAULT_STUDENT = @"perfil-photo.png";
-
-#pragma mark - endPoints
-
-static NSString *endPointLogin = @"/api/login";
-static NSString *endPointStudent = @"/api/student";
-static NSString *endPointResponsible = @"/api/responsible";
-static NSString *endPointInterested = @"/api/interested";
-static NSString *endPointEducator = @"/api/educator";
-static NSString *endPointAdministrator = @"/api/administrator";
-static NSString *endPointInstitution = @"/api/institution";
-static NSString *endPointMedia = @"/api/media";
-static NSString *endPointMediaList = @"/api/medialist";
-static NSString *endPointRegisterPush = @"/api/push";
-static NSString *endPointFacebook = @"/api/facebook";
-static NSString *endPointBindRequest = @"/api/binding";
-static NSString *endPointBindRequestList = @"/api/requests";
 
 #pragma mark - communication errors
 
@@ -159,67 +132,4 @@ typedef enum {
 enum fixedTags
 {
     tagToBackgroundPlaceholder = 900
-};
-
-#pragma mark - other constants
-
-enum userTypes
-{
-    accTypeStudent = 1,
-    accTypeParent = 2,
-    accTypeInterested = 3,
-    accTypeEducator = 4,
-    accTypeAdministrator = 5,
-    accTypeInstitution = 6
-};
-
-//used at Upload Queue
-enum requestType
-{
-    requestTypeMedia = 1,
-    requestTypeDiary = 2,
-    requestTypeEvent = 3
-};
-
-enum mediaTypes
-{
-    mediaTypeImage = 1,
-    mediaTypeVideo = 2,
-    mediaTypeAudio = 3
-};
-
-//used in customizable titles
-enum titleSizes
-{
-    smallTitle = 24,
-    regularTitle = 30,
-    largeTitle = 46
-};
-
-//used when linking users with a hash
-enum linkTypes
-{
-    linkTypeInterested = 3,
-    linkTypeParent = 2
-};
-
-enum bindRequestStatus
-{
-    bindRequestWaiting = 1,
-    bindRequestAccepted = 2,
-    bindRequestRejected = 3,
-    bindRequestCanceled = 4
-};
-
-enum bindRequestType
-{
-    bindAsInterested = 1,
-    bindAsResponsible = 2
-};
-
-enum statusPushNotification
-{
-    statusPushNotificationDisableByUser = 0,
-    statusPushNotificationIsEnable = 1,
-    statusPushNotificationDisableByError = 2
 };
