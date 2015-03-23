@@ -66,12 +66,6 @@ static KeychainItemWrapper *keychainPassword;
 
 -(void)setAccountWithInfo:(NSDictionary *)userInfo
 {
-//    if ([Utils validate:userInfo[@"login"]])
-//        [keychainPassword setObject:userInfo[@"login"] forKey:(__bridge id)kSecAttrAccount];
-//    
-//    if ([Utils validate:userInfo[@"password"]])
-//        [keychainPassword setObject:userInfo[@"password"] forKey:(__bridge id)kSecValueData];
-//    
     NSMutableDictionary *dicDescription = [self getDescriptionDictionary];
     if (dicDescription == nil)
         dicDescription = [[NSMutableDictionary alloc] init];
@@ -79,13 +73,6 @@ static KeychainItemWrapper *keychainPassword;
     if (userInfo[@"facebookId"])
         [dicDescription setObject:userInfo[@"facebookId"] forKey:@"facebookId"];
     
-//    if (userInfo[@"type"])
-//        [dicDescription setObject:userInfo[@"type"] forKey:@"type"];
-//    else if (userInfo[@"types"])
-//        [dicDescription setObject:[userInfo[@"types"] firstObject] forKey:@"type"];
-//    
-//    if ([Utils validate:userInfo[@"id"]])
-//        [dicDescription setObject:userInfo[@"id"] forKey:@"id"];
     
     if (dicDescription.count > 0)
         [self saveDescriptionDictionary:dicDescription];

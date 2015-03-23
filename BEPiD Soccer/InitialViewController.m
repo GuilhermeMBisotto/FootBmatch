@@ -8,8 +8,12 @@
 
 #import "InitialViewController.h"
 #import "LoginViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "AppDelegate.h"
+#import "SessionManager.h"
 
-@interface InitialViewController()
+@interface InitialViewController()<ILogin>
 
 @property (weak, nonatomic) IBOutlet FBLoginView *loginView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
@@ -23,67 +27,15 @@
     _loginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
 }
 
+#pragma mark - FACEBOOK METHODS
+
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user
 {
-   
-    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-    [query whereKey:@"email" equalTo:[user objectForKey:@"email"]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error)
-        {
-            if(objects.count <= 0)
-            {
-                self.emailFace = [user objectForKey:@"email"];
-                [self performSegueWithIdentifier:@"segueGoToLoginView" sender:user];
-            }
-            else
-            {
-                [self performSegueWithIdentifier:@"SegueLoginSuccess" sender:user];
-            }
-        } else
-        {
-            
-        }
-    }];
-    
-    
-//    PFUser *pfuser = [PFUser user];
-//    pfuser.username = @"jjj";
-//    pfuser.password = @"password";
-//    
-//    [pfuser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (!error)
-//        {
-//            
-////            NSData *imageData = UIImagePNGRepresentation(self.profile);
-////            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-////            
-////            PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
-////            userPhoto[@"imageName"] = @"My trip to Hawaii!";
-////            userPhoto[@"imageFile"] = imageFile;
-////            [userPhoto saveInBackground];
-//        }
-//        else NSLog(@"Fodac");
-//    }];
-//    NSData *imageData = UIImagePNGRepresentation(user.id);
-//    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-//    
-//    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
-//        [pfuser setObject:imageFile forKey:@"profilePic"];
-//        [pfuser saveInBackground];
-//    
-//    }
+    [[ServerConnection sharedManager] loginWithFacebook:user events:self];
 }
-    
-    //self.profilePictureView.profileID = user.id;
-    //self.nameLabel.text = user.name;
-    //_statusLabel.text = [NSString stringWithFormat:@"You're logged in as %@", user.name];
 
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
-{
-    //_statusLabel.text = @"You're logged in as";
-}
+#pragma mark - VIEW METHODS
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -92,10 +44,17 @@
         LoginViewController *mu = (LoginViewController *)[segue destinationViewController];
         mu.emailFace = self.emailFace;
     }
-    if([segue.identifier isEqualToString:@"SegueLoginSuccess"])
-    {
-        
-    }
+}
+
+#pragma mark - LOGIN EVENTS
+
+-(void)OnLoginSucceded:(NSDictionary *)userInfo
+{
+    [self performSegueWithIdentifier:@"SegueLoginSuccess" sender:self];
+}
+
+-(void)OnLoginError:(NSString *)error ErrorCode:(enum JsonErrorCode)errorCode
+{
     
 }
 

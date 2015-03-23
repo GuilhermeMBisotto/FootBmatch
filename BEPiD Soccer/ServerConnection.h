@@ -7,7 +7,5 @@
 
 +(id)sharedManager;
 
--(void)loginWithUser:(NSString *)user password:(NSString *)password events:(id<ILogin>)eventReceiver;
--(void)loginDireto:(id<ILogin>)eventReceiver;
-
+-(void)loginWithFacebook:(id<FBGraphUser>)user events:(id<ILogin>)eventReceiver;
 @end

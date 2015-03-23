@@ -32,7 +32,11 @@
 
 -(void)onSuccess:(NSMutableDictionary *)json
 {
-    
+    dispatch_async(dispatch_get_main_queue(), ^(void)
+                   {
+                       //chama o método que cuida das interacoes na view
+                       [m_loginEvents OnLoginSucceded:json];
+                   });
 }
 
 -(void)onFailure:(NSMutableDictionary *)error

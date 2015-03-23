@@ -19,27 +19,50 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedMyManager = [[self alloc] init];
+        
     });
+    
     return sharedMyManager;
 }
 
--(void)loginWithUser:(NSString *)user password:(NSString *)password events:(id<ILogin>)eventReceiver
-{
-    
-}
--(void)loginDireto:(id<ILogin>)eventReceiver
+-(void)loginWithFacebook:(NSDictionary*)user events:(id<ILogin>)eventReceiver
 {
     @try {
-        NSLog(@"aaaaaaaaa");
-//        NetworkStatus internetStatus = [m_sReachability currentReachabilityStatus];
-//        if (internetStatus == NotReachable)
-//        {
-//            [eventReceiver OnLoginError:NO_NETWORK ErrorCode:NoNetwork];
-//            return;
-//        }
+        
+        
+        //garante que não ocorram 2 requisições iguais antes de receber uma resposta
+        if ([self getReqLogin]) return;
+        [self setReqLogin:YES];
         
         HandlerLogin *handler = [[HandlerLogin alloc] initWithEvents:eventReceiver];
-        [HttpClientBase useParse:handler];
+        
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:user
+                                                           options:NSJSONWritingPrettyPrinted
+                                                             error:nil];
+        
+        static NSMutableDictionary *json;
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+        [query whereKey:@"email" equalTo:[user objectForKey:@"email"]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error)
+            {
+                if(objects.count > 0)
+                {
+                    json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+                    [handler onSuccess:json];
+                }
+                else
+                {
+                    json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+                    [handler onFailure:json];
+                }
+            } else
+            {
+                
+            }
+        }];
+        
     }
     @catch (NSException *exception)
     {
@@ -50,6 +73,16 @@
     }
     @finally {
     }
+}
+
+-(void)setReqLogin:(BOOL)bValue
+{
+    m_bIsRequestingLogin = bValue;
+}
+
+-(BOOL)getReqLogin
+{
+    return m_bIsRequestingLogin;
 }
 
 @end

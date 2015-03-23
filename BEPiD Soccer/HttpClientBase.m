@@ -22,9 +22,17 @@ static NSString *m_userAgent = @"Aproximar Client (IOS) -v";
 {
     
         //fazer funcionalidade genérica.....
-    NSLog(@"Aquiiiiiiiiiii");
-    
+    NSLog(@"----------------------HttpClientBase");
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    NSURL *url = [NSURL URLWithString:@"http://beta.aproximar.greenb.com.br/api/student?institution=1000"];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:m_userAgent forHTTPHeaderField:@"User-Agent"];
+    [request setTimeoutInterval:TIMEOUTINTERVAL];
+    
     [NSURLConnection connectionWithRequest:request delegate: handler];
 }
 
