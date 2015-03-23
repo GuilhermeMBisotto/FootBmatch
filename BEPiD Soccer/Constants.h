@@ -10,7 +10,7 @@
 #pragma mark - general
 
 static BOOL debugMode = TRUE;
-static NSString *projectName = @"FootB Match";
+static NSString *projectName = @"FootBmatch";
 
 static NSInteger timeoutInterval = 15;
 
