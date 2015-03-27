@@ -36,11 +36,12 @@
 		E4BBDE2F1AAFB27800AF1100 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BBDE2E1AAFB27800AF1100 /* StoreKit.framework */; };
 		E4BBDE311AAFB28400AF1100 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BBDE301AAFB28400AF1100 /* SystemConfiguration.framework */; };
 		E4BBDE3D1AAFBAB900AF1100 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BBDE3C1AAFBAB900AF1100 /* Bolts.framework */; };
-		E4BBDE3F1AAFBAD300AF1100 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BBDE3E1AAFBAD300AF1100 /* FacebookSDK.framework */; };
 		E4BBDE411AAFBB0A00AF1100 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BBDE401AAFBB0A00AF1100 /* FBAudienceNetwork.framework */; };
 		E4BBDE441AAFC70C00AF1100 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BBDE431AAFC70C00AF1100 /* InitialViewController.m */; };
 		E4BBDE471AAFC71C00AF1100 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BBDE461AAFC71C00AF1100 /* LoginViewController.m */; };
 		E4BBDE491AB11BFB00AF1100 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BBDE481AB11BFB00AF1100 /* ParseFacebookUtils.framework */; };
+		E4C736C91AC5C0CF00DE37BF /* campo-de-futebol-wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4C736C81AC5C0CF00DE37BF /* campo-de-futebol-wallpaper.jpg */; };
+		E4C736CB1AC5C10200DE37BF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C736CA1AC5C10200DE37BF /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +84,6 @@
 		E4BBDE2E1AAFB27800AF1100 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E4BBDE301AAFB28400AF1100 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E4BBDE3C1AAFBAB900AF1100 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		E4BBDE3E1AAFBAD300AF1100 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		E4BBDE401AAFBB0A00AF1100 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		E4BBDE421AAFC70C00AF1100 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		E4BBDE431AAFC70C00AF1100 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
@@ -91,6 +91,8 @@
 		E4BBDE461AAFC71C00AF1100 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4BBDE481AB11BFB00AF1100 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		E4BBDE4A1AB11F5800AF1100 /* BEPiD Soccer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BEPiD Soccer-Prefix.pch"; sourceTree = "<group>"; };
+		E4C736C81AC5C0CF00DE37BF /* campo-de-futebol-wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "campo-de-futebol-wallpaper.jpg"; sourceTree = "<group>"; };
+		E4C736CA1AC5C10200DE37BF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +119,9 @@
 				E4BBDDFF1AAF71F700AF1100 /* libz.dylib in Frameworks */,
 				E4BBDDFD1AAF71F000AF1100 /* Accounts.framework in Frameworks */,
 				E4BBDE491AB11BFB00AF1100 /* ParseFacebookUtils.framework in Frameworks */,
+				E4C736CB1AC5C10200DE37BF /* FacebookSDK.framework in Frameworks */,
 				E4BBDDFB1AAF71D200AF1100 /* CoreLocation.framework in Frameworks */,
 				E4BBDE3D1AAFBAB900AF1100 /* Bolts.framework in Frameworks */,
-				E4BBDE3F1AAFBAD300AF1100 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +207,7 @@
 				E4BBDE461AAFC71C00AF1100 /* LoginViewController.m */,
 				E4BBDDDB1AAF70E800AF1100 /* Main.storyboard */,
 				E4BBDDE01AAF70E800AF1100 /* LaunchScreen.xib */,
+				E4C736C81AC5C0CF00DE37BF /* campo-de-futebol-wallpaper.jpg */,
 				E4BBDDDE1AAF70E800AF1100 /* Images.xcassets */,
 				E4BBDDF71AAF715A00AF1100 /* Frameworks */,
 				E4BBDDD11AAF70E800AF1100 /* Supporting Files */,
@@ -225,10 +228,10 @@
 		E4BBDDF71AAF715A00AF1100 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4C736CA1AC5C10200DE37BF /* FacebookSDK.framework */,
 				7CB47B961ABF971000559297 /* Parse.framework */,
 				E4BBDE481AB11BFB00AF1100 /* ParseFacebookUtils.framework */,
 				E4BBDE401AAFBB0A00AF1100 /* FBAudienceNetwork.framework */,
-				E4BBDE3E1AAFBAD300AF1100 /* FacebookSDK.framework */,
 				E4BBDE3C1AAFBAB900AF1100 /* Bolts.framework */,
 				E4BBDE301AAFB28400AF1100 /* SystemConfiguration.framework */,
 				E4BBDE2E1AAFB27800AF1100 /* StoreKit.framework */,
@@ -310,6 +313,7 @@
 			files = (
 				E4BBDDDD1AAF70E800AF1100 /* Main.storyboard in Resources */,
 				E4BBDDE21AAF70E800AF1100 /* LaunchScreen.xib in Resources */,
+				E4C736C91AC5C0CF00DE37BF /* campo-de-futebol-wallpaper.jpg in Resources */,
 				E4BBDDDF1AAF70E800AF1100 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +451,8 @@
 					Soccer,
 					"$(PROJECT_DIR)/BEPiD",
 					Soccer,
+					"$(PROJECT_DIR)/BEPiD",
+					Soccer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BEPiD Soccer/BEPiD Soccer-Prefix.pch";
@@ -461,6 +467,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/BEPiD",
+					Soccer,
 					"$(PROJECT_DIR)/BEPiD",
 					Soccer,
 					"$(PROJECT_DIR)/BEPiD",
