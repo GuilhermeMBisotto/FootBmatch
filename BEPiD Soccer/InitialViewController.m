@@ -12,6 +12,8 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "AppDelegate.h"
 #import "SessionManager.h"
+//#import <SendGrid/SendGrid.h>
+//#import <SendGrid/SendGridEmail.h>
 
 @interface InitialViewController()<ILogin>
 
@@ -25,6 +27,38 @@
 -(void)viewDidLoad
 {
     _loginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+    
+    
+//    SendGrid *sendgrid = [SendGrid apiUser:api_user apiKey:api_key];
+//    
+//    SendGridEmail *email = [[SendGridEmail alloc] init];
+//    email.to = @"you@youreamil.com";
+//    email.from = @"test@sendgrid.com";
+//    email.subject = @"Sending with SendGrid is Fun";
+//    email.html = @"and easy to do anywhere, even with Objective-C";
+//
+//    [sendgrid sendWithWeb:email];
+    
+//    [PFCloud callFunctionInBackground:@"hello"
+//                       withParameters:@{}
+//                                block:^(NSString *result, NSError *error) {
+//                                    if (!error) {
+//                                        // result is @"Hello world!"
+//                                    }
+//                                }];
+    
+    
+    [PFCloud callFunctionInBackground:@"sendMail"
+                       withParameters:@{@"toEmail":@"jadernunes.jbn@gmail.com",@"toName":@"Minnjie Xu",@"fromEmail":@"jadernunes.jbn@gmail.com",@"fromName":@"uudaddy",@"text":@"resetPasswordButtonPressed...",@"subject":@"myNestEgg ~ testing ManDrill email"}
+                                block:^(NSString *result, NSError *error) {
+                                    if (!error) {
+                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset Passoword" message:@"Email Sent :-)"
+                                                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alert show];
+                                        
+                                    }
+                                }];
+    
 }
 
 #pragma mark - FACEBOOK METHODS
@@ -50,6 +84,7 @@
 
 -(void)OnLoginSucceded:(NSDictionary *)userInfo
 {
+    [[SessionManager sharedManager] setAccountWithInfo:userInfo];
     [self performSegueWithIdentifier:@"SegueLoginSuccess" sender:self];
 }
 
