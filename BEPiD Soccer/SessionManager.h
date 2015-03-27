@@ -8,6 +8,7 @@
 -(NSString *)getPass;
 -(NSNumber *)getType;
 -(NSNumber *)getId;
+-(NSString *)getObjectIdUser;
 -(NSString *)getFacebookId;
 
 -(void)setAccountWithInfo:(NSDictionary *)userInfo;
