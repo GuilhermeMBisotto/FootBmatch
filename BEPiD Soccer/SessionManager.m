@@ -57,6 +57,14 @@ static KeychainItemWrapper *keychainPassword;
     return facebookId;
 }
 
+-(NSString *)getObjectIdUser
+{
+    NSDictionary *dicDescription = [self getDescriptionDictionary];
+    
+    NSString *objectIdUser = dicDescription[@"objectIdUser"];
+    return objectIdUser;
+}
+
 -(void)setAccountWithInfo:(NSDictionary *)userInfo
 {
     NSMutableDictionary *dicDescription = [self getDescriptionDictionary];
@@ -66,6 +74,8 @@ static KeychainItemWrapper *keychainPassword;
     if (userInfo[@"facebookId"])
         [dicDescription setObject:userInfo[@"facebookId"] forKey:@"facebookId"];
     
+    if (userInfo[@"objectIdUser"])
+        [dicDescription setObject:userInfo[@"objectIdUser"] forKey:@"objectIdUser"];
     
     if (dicDescription.count > 0)
         [self saveDescriptionDictionary:dicDescription];

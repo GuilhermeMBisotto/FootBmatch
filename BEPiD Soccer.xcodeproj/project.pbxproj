@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7CB47B971ABF971000559297 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB47B961ABF971000559297 /* Parse.framework */; };
+		7C0C28D31AC4A21A0019E903 /* HandlerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0C28D21AC4A21A0019E903 /* HandlerGroup.m */; };
+		7C0C28D71AC4A5750019E903 /* ListaGruposTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0C28D61AC4A5750019E903 /* ListaGruposTableViewController.m */; };
 		7CB47B9F1ABF976700559297 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB47B9C1ABF976700559297 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7CB47BA01ABF976700559297 /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB47B9E1ABF976700559297 /* SessionManager.m */; };
 		7CB47BA71ABF979400559297 /* HandlerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB47BA61ABF979400559297 /* HandlerLogin.m */; };
 		7CB47BAE1ABF97A700559297 /* AsyncHttpResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB47BA91ABF97A700559297 /* AsyncHttpResponseHandler.m */; };
 		7CB47BAF1ABF97A700559297 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB47BAB1ABF97A700559297 /* ServerConnection.m */; };
+		7CEB05CB1AC5A62D00867AF4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEB05CA1AC5A62D00867AF4 /* Parse.framework */; };
 		E4BBDDD41AAF70E800AF1100 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BBDDD31AAF70E800AF1100 /* main.m */; };
 		E4BBDDD71AAF70E800AF1100 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BBDDD61AAF70E800AF1100 /* AppDelegate.m */; };
 		E4BBDDDD1AAF70E800AF1100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BBDDDB1AAF70E800AF1100 /* Main.storyboard */; };
@@ -44,7 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7CB47B961ABF971000559297 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		7C0C28D11AC4A21A0019E903 /* HandlerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandlerGroup.h; sourceTree = "<group>"; };
+		7C0C28D21AC4A21A0019E903 /* HandlerGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandlerGroup.m; sourceTree = "<group>"; };
+		7C0C28D41AC4A2270019E903 /* IGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGroup.h; sourceTree = "<group>"; };
+		7C0C28D51AC4A5750019E903 /* ListaGruposTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaGruposTableViewController.h; sourceTree = "<group>"; };
+		7C0C28D61AC4A5750019E903 /* ListaGruposTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaGruposTableViewController.m; sourceTree = "<group>"; };
 		7CB47B991ABF974400559297 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7CB47B9B1ABF976700559297 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		7CB47B9C1ABF976700559297 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
@@ -57,6 +63,7 @@
 		7CB47BA91ABF97A700559297 /* AsyncHttpResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncHttpResponseHandler.m; sourceTree = "<group>"; };
 		7CB47BAA1ABF97A700559297 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
 		7CB47BAB1ABF97A700559297 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
+		7CEB05CA1AC5A62D00867AF4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E4BBDDCE1AAF70E800AF1100 /* BEPiD Soccer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BEPiD Soccer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BBDDD21AAF70E800AF1100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BBDDD31AAF70E800AF1100 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,7 +111,7 @@
 				E4BBDE2B1AAFB26900AF1100 /* Security.framework in Frameworks */,
 				E4BBDE291AAFB25F00AF1100 /* QuartzCore.framework in Frameworks */,
 				E4BBDE271AAFB25400AF1100 /* MobileCoreServices.framework in Frameworks */,
-				7CB47B971ABF971000559297 /* Parse.framework in Frameworks */,
+				7CEB05CB1AC5A62D00867AF4 /* Parse.framework in Frameworks */,
 				E4BBDE411AAFBB0A00AF1100 /* FBAudienceNetwork.framework in Frameworks */,
 				E4BBDE251AAFB24800AF1100 /* CoreGraphics.framework in Frameworks */,
 				E4BBDE231AAFB23F00AF1100 /* CFNetwork.framework in Frameworks */,
@@ -161,6 +168,7 @@
 		7CB47BA21ABF977700559297 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				7C0C28D41AC4A2270019E903 /* IGroup.h */,
 				7CB47BA41ABF978B00559297 /* ILogin.h */,
 			);
 			name = Interface;
@@ -169,6 +177,8 @@
 		7CB47BA31ABF977F00559297 /* Handler */ = {
 			isa = PBXGroup;
 			children = (
+				7C0C28D11AC4A21A0019E903 /* HandlerGroup.h */,
+				7C0C28D21AC4A21A0019E903 /* HandlerGroup.m */,
 				7CB47BA51ABF979400559297 /* HandlerLogin.h */,
 				7CB47BA61ABF979400559297 /* HandlerLogin.m */,
 			);
@@ -194,6 +204,7 @@
 		E4BBDDD01AAF70E800AF1100 /* BEPiD Soccer */ = {
 			isa = PBXGroup;
 			children = (
+				7CEB05CA1AC5A62D00867AF4 /* Parse.framework */,
 				7CB47BA11ABF977300559297 /* Communication */,
 				7CB47B9A1ABF975A00559297 /* KeyChain */,
 				7CB47B981ABF973600559297 /* Constants */,
@@ -203,6 +214,8 @@
 				E4BBDE431AAFC70C00AF1100 /* InitialViewController.m */,
 				E4BBDE451AAFC71C00AF1100 /* LoginViewController.h */,
 				E4BBDE461AAFC71C00AF1100 /* LoginViewController.m */,
+				7C0C28D51AC4A5750019E903 /* ListaGruposTableViewController.h */,
+				7C0C28D61AC4A5750019E903 /* ListaGruposTableViewController.m */,
 				E4BBDDDB1AAF70E800AF1100 /* Main.storyboard */,
 				E4BBDDE01AAF70E800AF1100 /* LaunchScreen.xib */,
 				E4BBDDDE1AAF70E800AF1100 /* Images.xcassets */,
@@ -225,7 +238,6 @@
 		E4BBDDF71AAF715A00AF1100 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7CB47B961ABF971000559297 /* Parse.framework */,
 				E4BBDE481AB11BFB00AF1100 /* ParseFacebookUtils.framework */,
 				E4BBDE401AAFBB0A00AF1100 /* FBAudienceNetwork.framework */,
 				E4BBDE3E1AAFBAD300AF1100 /* FacebookSDK.framework */,
@@ -327,7 +339,9 @@
 				E4BBDE471AAFC71C00AF1100 /* LoginViewController.m in Sources */,
 				E4BBDE441AAFC70C00AF1100 /* InitialViewController.m in Sources */,
 				E4BBDDD71AAF70E800AF1100 /* AppDelegate.m in Sources */,
+				7C0C28D31AC4A21A0019E903 /* HandlerGroup.m in Sources */,
 				7CB47B9F1ABF976700559297 /* KeychainItemWrapper.m in Sources */,
+				7C0C28D71AC4A5750019E903 /* ListaGruposTableViewController.m in Sources */,
 				7CB47BAF1ABF97A700559297 /* ServerConnection.m in Sources */,
 				E4BBDDD41AAF70E800AF1100 /* main.m in Sources */,
 			);
@@ -447,6 +461,10 @@
 					Soccer,
 					"$(PROJECT_DIR)/BEPiD",
 					Soccer,
+					"$(PROJECT_DIR)/BEPiD",
+					Soccer,
+					"$(PROJECT_DIR)/BEPiD",
+					Soccer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BEPiD Soccer/BEPiD Soccer-Prefix.pch";
@@ -461,6 +479,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/BEPiD",
+					Soccer,
+					"$(PROJECT_DIR)/BEPiD",
+					Soccer,
 					"$(PROJECT_DIR)/BEPiD",
 					Soccer,
 					"$(PROJECT_DIR)/BEPiD",
